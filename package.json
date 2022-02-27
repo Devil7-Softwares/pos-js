@@ -1,7 +1,7 @@
 {
   "name": "@devil7softwares/pos",
   "description": "FastTag part of speech tagger implementation",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "author": "Percy Wegmann",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
