@@ -1,4 +1,4 @@
-import { Lexer, Tagger, TagType } from '@devil7softwares/pos';
+import { Tagger, TagType } from '@devil7softwares/pos';
 
 const tagger = new Tagger();
 

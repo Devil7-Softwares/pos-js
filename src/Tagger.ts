@@ -9,14 +9,12 @@
 import BrillTransformationRules from './BrillTransformationRules';
 import { TagType } from './enums';
 import LexiconJson from './Lexicon.json';
-import { TaggedWord, TaggedSentense } from './types';
+import { TaggedSentence, TaggedWord } from './types';
 
 const Lexicon = LexiconJson as Record<string, TagType[]>;
 const transformationRules = new BrillTransformationRules();
 
 export class Tagger {
-    public constructor() {}
-
     public wordInLexicon(word: string) {
         return Boolean(
             Lexicon[word] ||
@@ -26,10 +24,10 @@ export class Tagger {
     }
 
     public tag(words: string[]) {
-        const taggedSentence: TaggedSentense = new Array(words.length);
+        const taggedSentence: TaggedSentence = new Array(words.length);
 
         // Initialise taggedSentence with words and initial categories
-        for (var i = 0, size = words.length; i < size; i++) {
+        for (let i = 0, size = words.length; i < size; i++) {
             taggedSentence[i] = new Array(2) as TaggedWord;
             taggedSentence[i][0] = words[i];
 
@@ -63,8 +61,8 @@ export class Tagger {
     }
 
     public extendLexicon(lexicon: Record<string, TagType[]>) {
-        for (var word in lexicon) {
-            if (!Lexicon.hasOwnProperty(word)) {
+        for (const word in lexicon) {
+            if (!Lexicon[word]) {
                 Lexicon[word] = lexicon[word];
             }
         }

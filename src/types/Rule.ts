@@ -1,3 +1,3 @@
-import { TaggedSentense } from './TaggedSentence';
+import { TaggedSentence } from './TaggedSentence';
 
-export type Rule = (taggedSentence: TaggedSentense, index: number) => void;
+export type Rule = (taggedSentence: TaggedSentence, index: number) => void;

@@ -17,10 +17,10 @@
 */
 
 import { TagType } from './enums';
-import { Rule, TaggedSentense } from './types';
+import { Rule, TaggedSentence } from './types';
 
 //  rule 1: DT, {VBD | VBP} --> DT, NN
-function rule1(taggedSentence: TaggedSentense, index: number) {
+function rule1(taggedSentence: TaggedSentence, index: number) {
     if (index > 0 && taggedSentence[index - 1][1] === TagType.DT) {
         if (
             taggedSentence[index][1] === TagType.VBD ||
@@ -33,7 +33,7 @@ function rule1(taggedSentence: TaggedSentense, index: number) {
 }
 
 // rule 2: convert a noun to a number (CD) if "." appears in the word
-function rule2(taggedSentence: TaggedSentense, index: number) {
+function rule2(taggedSentence: TaggedSentence, index: number) {
     if (taggedSentence[index][1].startsWith('N')) {
         if (taggedSentence[index][0].indexOf('.') > -1) {
             if (/[a-zA-Z]{2}/.test(taggedSentence[index][0])) {
@@ -50,28 +50,28 @@ function rule2(taggedSentence: TaggedSentense, index: number) {
 }
 
 // rule 3: convert a noun to a past participle if words[i] ends with "ed"
-function rule3(taggedSentence: TaggedSentense, index: number) {
+function rule3(taggedSentence: TaggedSentence, index: number) {
     if (taggedSentence[index][1].startsWith('N') && taggedSentence[index][0].endsWith('ed')) {
         taggedSentence[index][1] = TagType.VBN;
     }
 }
 
 // rule 4: convert any type to adverb if it ends in "ly";
-function rule4(taggedSentence: TaggedSentense, index: number) {
+function rule4(taggedSentence: TaggedSentence, index: number) {
     if (taggedSentence[index][0].endsWith('ly')) {
         taggedSentence[index][1] = TagType.RB;
     }
 }
 
 // rule 5: convert a common noun (NN or NNS) to a adjective if it ends with "al"
-function rule5(taggedSentence: TaggedSentense, index: number) {
+function rule5(taggedSentence: TaggedSentence, index: number) {
     if (taggedSentence[index][1].startsWith('NN') && taggedSentence[index][0].endsWith('al')) {
         taggedSentence[index][1] = TagType.JJ;
     }
 }
 
 // rule 6: convert a noun to a verb if the preceding work is "would"
-function rule6(taggedSentence: TaggedSentense, index: number) {
+function rule6(taggedSentence: TaggedSentence, index: number) {
     if (
         index > 0 &&
         taggedSentence[index][1].startsWith('NN') &&
@@ -83,14 +83,14 @@ function rule6(taggedSentence: TaggedSentense, index: number) {
 
 // rule 7: if a word has been categorized as a common noun and it ends with "s",
 //         then set its type to plural common noun (NNS)
-function rule7(taggedSentence: TaggedSentense, index: number) {
+function rule7(taggedSentence: TaggedSentence, index: number) {
     if (taggedSentence[index][1] === TagType.NN && taggedSentence[index][0].endsWith('s')) {
         taggedSentence[index][1] = TagType.NNS;
     }
 }
 
 // rule 8: convert a common noun to a present participle verb (i.e., a gerund)
-function rule8(taggedSentence: TaggedSentense, index: number) {
+function rule8(taggedSentence: TaggedSentence, index: number) {
     if (taggedSentence[index][1].startsWith(TagType.NN) && taggedSentence[index][0].endsWith('ing')) {
         taggedSentence[index][1] = TagType.VBG;
     }
