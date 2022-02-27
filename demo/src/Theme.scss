@@ -1,0 +1,31 @@
+div#root {
+    --transition-time: 0.5s;
+    --theme-transition: background var(--transition-time), color var(--transition-time),
+        box-shadow var(--transition-time), fill var(--transition-time);
+
+    &.light {
+        --background: #ffffff;
+        --background-button-hover: #c7e8fc;
+        --border-color: #cccccc;
+        --text-color: #000000;
+        --text-color-link: #0000ff;
+        --text-color-link-active: #ff0000;
+        --alternate-row-color: #eeeeee;
+        --shadow-color: #cccccc;
+        --shadow-color-active: #6363ff;
+        --slider-button-background: #ffffff;
+    }
+
+    &.dark {
+        --background: #1d1d1d;
+        --background-button-hover: #414141;
+        --border-color: #3c3c3c;
+        --text-color: #ffffff;
+        --text-color-link: #7676ff;
+        --text-color-link-active: #c54e4e;
+        --alternate-row-color: #313131;
+        --shadow-color: #444444;
+        --shadow-color-active: #323281;
+        --slider-button-background: #474747;
+    }
+}

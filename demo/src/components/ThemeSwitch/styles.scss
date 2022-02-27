@@ -1,0 +1,132 @@
+label.switch {
+    --checked-color: #666666;
+    --height: 34px;
+    --width: 60px;
+
+    -webkit-tap-highlight-color: transparent;
+
+    position: relative;
+
+    display: inline-block;
+
+    width: var(--width);
+    height: var(--height);
+    margin-left: 10px;
+
+    user-select: none;
+
+    > span.slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        background-color: #cccccc;
+
+        cursor: pointer;
+
+        transition: 0.4s;
+
+        &::before {
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            content: '';
+
+            width: 26px;
+            height: 26px;
+
+            background-color: var(--slider-button-background);
+
+            transition: 0.4s;
+        }
+
+        &.round {
+            border-radius: 34px;
+        }
+
+        &.round::before {
+            border-radius: 50%;
+        }
+
+        > svg {
+            position: absolute;
+            left: 4px;
+            bottom: 2px;
+
+            width: 26px;
+            height: 26px;
+
+            fill: var(--text-color);
+
+            transition: 0.4s;
+
+            &.cloud,
+            &.stars {
+                left: 33px;
+                bottom: 8px;
+
+                width: 20px;
+                height: 20px;
+
+                fill: #ffffff;
+            }
+
+            &.stars {
+                opacity: 0;
+            }
+
+            &.moon {
+                opacity: 0;
+            }
+
+            &.sun {
+                opacity: 1;
+            }
+        }
+    }
+
+    > input {
+        width: 0;
+        height: 0;
+
+        opacity: 0;
+
+        &:focus + span.slider {
+            box-shadow: 0 0 1px var(--checked-color);
+        }
+
+        &:checked + span.slider {
+            background-color: var(--checked-color);
+
+            &::before {
+                transform: translateX(26px);
+            }
+
+            > svg {
+                transform: translateX(26px);
+
+                &.moon {
+                    opacity: 1;
+                }
+
+                &.sun {
+                    opacity: 0;
+                }
+
+                &.cloud {
+                    left: -20px;
+
+                    opacity: 0;
+                }
+
+                &.stars {
+                    left: -20px;
+
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
