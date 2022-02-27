@@ -1,0 +1,23 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'tsconfig.json'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: yarn install
+      - run: yarn build
+      - run: yarn test
