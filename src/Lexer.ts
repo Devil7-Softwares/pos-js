@@ -46,31 +46,27 @@ class LexerNode {
             const nextRegex = regexs[0],
                 nextRegexes = regexs.slice(1);
 
-            for (const i in childElements) {
-                if (childElements[i]) {
-                    this.children.push(new LexerNode(childElements[i], nextRegex, nextRegexes));
-                }
+            for (const element of childElements) {
+                this.children.push(new LexerNode(element, nextRegex, nextRegexes));
             }
         }
     }
 
     private fillArray(array: (LexerNode | string)[]): (LexerNode | string)[] {
         for (let i = 0; i < this.children.length; i++) {
-            if (this.children[i]) {
-                const child = this.children[i];
+            const child = this.children[i];
 
-                if (typeof child !== 'string' && typeof child.fillArray === 'function') {
-                    child.fillArray(array);
-                } else if (re.unblank.test(child.toString())) {
-                    array.push(child.toString().trim());
-                }
+            if (typeof child !== 'string' && typeof child.fillArray === 'function') {
+                child.fillArray(array);
+            } else if (re.unblank.test(child.toString())) {
+                array.push(child.toString().trim());
+            }
 
-                if (this.matches) {
-                    if (i < this.matches.length) {
-                        const match = this.matches[i];
-                        if (re.unblank.test(match)) {
-                            array.push(match.trim());
-                        }
+            if (this.matches) {
+                if (i < this.matches.length) {
+                    const match = this.matches[i];
+                    if (re.unblank.test(match)) {
+                        array.push(match.trim());
                     }
                 }
             }
