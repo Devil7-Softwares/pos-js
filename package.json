@@ -37,8 +37,8 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "~2.1.0",
-    "should": "~5.0.1"
+    "mocha": "~9.2.1",
+    "should": "~13.2.3"
   },
   "keywords": [
     "nlp",
