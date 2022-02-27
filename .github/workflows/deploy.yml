@@ -1,0 +1,25 @@
+name: Deploy Demo to Github Pages
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'demo/**'
+      - 'src/**'
+      - 'package.json'
+      - 'tsconfig.json'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn install
+      - run: yarn build
+      - run: cd demo && yarn install
+      - run: cd demo && yarn build
+      - uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: demo/dist
