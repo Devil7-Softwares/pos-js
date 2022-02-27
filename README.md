@@ -14,22 +14,18 @@ yarn add @devil7softwares/pos
 ```
 
 ## Usage
-```javascript
-var pos = require('pos');
-var words = new pos.Lexer().lex('This is some sample text. This text can contain multiple sentences.');
-var tagger = new pos.Tagger();
-var taggedWords = tagger.tag(words);
-for (i in taggedWords) {
-    var taggedWord = taggedWords[i];
-    var word = taggedWord[0];
-    var tag = taggedWord[1];
+```typescript
+import { Lexer, Tagger, TagType } from '@devil7softwares/pos';
+
+const lexer = new Lexer();
+const tagger = new Tagger();
+
+const words = lexer.lex('This is some sample text. This text can contain multiple sentences.');
+const taggedWords = tagger.tag(words);
+
+for (const [word, tag] of taggedWords) {
     console.log(word + ' /' + tag);
 }
-
-// extend the lexicon
-tagger.extendLexicon({ Obama: ['NNP'] });
-tagger.tag(['Mr', 'Obama']);
-// --> [[ 'Mr', 'NNP' ], [ 'Obama', 'NNP' ]]
 ```
 
 ## License
