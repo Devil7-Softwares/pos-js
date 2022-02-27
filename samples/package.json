@@ -1,0 +1,17 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "run-p start:*",
+    "start:basic": "../node_modules/.bin/ts-node basic.ts",
+    "start:extend-lexicon": "../node_modules/.bin/ts-node extend-lexicon.ts"
+  },
+  "dependencies": {
+    "@devil7softwares/pos": "file:.."
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
