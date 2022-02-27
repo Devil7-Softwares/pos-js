@@ -18,12 +18,7 @@
       "url": "https://devil7softwares.com"
     }
   ],
-  "licenses": [
-    {
-      "type": "LGPL",
-      "url": "http://www.gnu.org/licenses/lgpl.html"
-    }
-  ],
+  "license": "LGPL",
   "repository": {
     "type": "git",
     "url": "git://github.com/Devil7-Softwares/pos-js.git"
