@@ -1,4 +1,4 @@
-# POS
+# POS ![build & test](https://github.com/Devil7-Softwares/pos-js/workflows/Build%20and%20Test/badge.svg) ![npm](https://img.shields.io/npm/v/@devil7softwares/pos) ![license](https://img.shields.io/npm/l/@devil7softwares/pos) ![min](https://img.shields.io/bundlephobia/min/@devil7softwares/pos) ![minzip](https://img.shields.io/bundlephobia/minzip/@devil7softwares/pos)
 
 pos-js is a Javascript port of Mark Watson's FastTag Part of Speech Tagger which was itself based on Eric Brill's trained rule set and English lexicon. It also includes a basic lexer that can be used to extract words and other tokens from text strings. Originally this was written by [Percy Wegmann](http://www.percywegmann.com/) and is [available on Google code](https://code.google.com/p/jspos/).
 
