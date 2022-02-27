@@ -4,6 +4,9 @@ pos-js is a Javascript port of Mark Watson's FastTag Part of Speech Tagger which
 
 This fork adds TypeScript support to a fork made by [Darius Kazemi](https://github.com/dariusk) which added Node.JS and npm support.
 
+## Demo
+[Click here](https://devil7-softwares.github.io/pos-js/) to check demo or checkout [samples](./samples) and [demo source](./demo).
+
 ## Installation
 ```sh
 npm install @devil7softwares/pos
