@@ -1,9 +1,10 @@
 {
-  "name": "pos",
+  "name": "@devil7softwares/pos",
   "description": "FastTag part of speech tagger implementation",
   "version": "0.4.1",
   "author": "Percy Wegmann",
-  "main": "./index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/Devil7-Softwares/pos-js",
   "contributors": [
     {
@@ -33,6 +34,9 @@
   "engines": {
     "node": ">=0"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext ts --fix",
