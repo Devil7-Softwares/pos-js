@@ -1,23 +1,22 @@
 {
   "name": "pos",
-  "description": "fasttag part of speech tagger implementation",
-  "keywords": [
-    "nlp",
-    "pos",
-    "part of speech",
-    "jspos",
-    "fasttag"
-  ],
-  "homepage": "https://github.com/dariusk/pos-js",
+  "description": "FastTag part of speech tagger implementation",
+  "version": "0.4.1",
   "author": "Percy Wegmann",
+  "main": "./index.js",
+  "homepage": "https://github.com/Devil7-Softwares/pos-js",
   "contributors": [
     {
       "name": "Darius Kazemi",
       "email": "darius.kazemi@gmail.com",
       "url": "http://tinysubversions.com"
+    },
+    {
+      "name": "Dineshkumar T",
+      "email": "dineshkumar@devil7softwares.com",
+      "url": "https://devil7softwares.com"
     }
   ],
-  "version": "0.4.1",
   "licenses": [
     {
       "type": "LGPL",
@@ -26,10 +25,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/dariusk/pos-js.git"
+    "url": "git://github.com/Devil7-Softwares/pos-js.git"
   },
   "bugs": {
-    "url": "https://github.com/dariusk/pos-js/issues"
+    "url": "https://github.com/Devil7-Softwares/pos-js/issues"
   },
   "engines": {
     "node": ">=0"
@@ -37,9 +36,15 @@
   "scripts": {
     "test": "mocha"
   },
-  "main": "./index.js",
   "devDependencies": {
     "mocha": "~2.1.0",
     "should": "~5.0.1"
-  }
+  },
+  "keywords": [
+    "nlp",
+    "pos",
+    "part of speech",
+    "jspos",
+    "fasttag"
+  ]
 }
