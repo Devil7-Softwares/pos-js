@@ -1,5 +1,5 @@
 {
-  "name": "@devil7softwares/pos",
+  "name": "fast-tag-pos",
   "description": "FastTag part of speech tagger implementation",
   "version": "1.0.2",
   "author": "Percy Wegmann",
